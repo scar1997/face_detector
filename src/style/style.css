@@ -87,7 +87,7 @@ p{
   background-color: white;
   color: #4CAF50;
   border: 2px solid #4CAF50;
-  transition: 0.8s;
+  transition: 0.5s;
 }
 
 .spacing{
@@ -97,3 +97,68 @@ p{
 .spacing .top{
   padding: 50px 0px 0px 0px;
 }
+
+/*OVERLAY*/
+.overlay {
+  height: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background-color: rgba(255,255,255, 1);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+
+/* Position the content inside the overlay
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top
+    width: 100%; /* 100% width
+    text-align: center; /* Centered text/links
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens
+}
+*/
+
+/* The navigation links inside the overlay
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; Display block instead of inline
+    transition: 0.3s; Transition effects on hover (color)
+}
+*/
+
+/* When you mouse over the navigation links, change their color
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}*/
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+    color: #4D4D4D;
+    text-decoration: none;
+}
+.overlay .closebtn:hover {
+  color: #ff5757;
+  transition: 0.5s;
+}
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+*/
