@@ -8,6 +8,9 @@ body{
   height: 100%;
   font-family: 'Open Sans', sans-serif;
 }
+p{
+  margin: 0 0 0 0;
+}
 
 .container-fluid{
   padding: 0px;
@@ -61,7 +64,36 @@ body{
 }
 /*HOW IT WORKS*/
 .section1_txt{
-  color:rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 17px;
   font-weight: 300;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 500;
+  border: 2px solid #FFFFFF;
+}
+
+.button:hover{
+  background-color: white;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+  transition: 0.8s;
+}
+
+.spacing{
+  padding: 50px 0px 50px 0px;
+
+}
+.spacing .top{
+  padding: 50px 0px 0px 0px;
 }
