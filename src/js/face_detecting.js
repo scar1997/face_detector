@@ -6,6 +6,13 @@
     dataType: "json"
 }).done(function(response){
 	console.log(response);
+  if (response.Errors[0].ErrCode == "5002")  {
+    $( ".inner" ).append('<p>'+ "No faces found in the image"+'</p>').show( 1000 )
+    console.log("errore");
+  }
+  else {
+
+
   ris ={
   "age": response.images[0].faces[0].attributes.age,
   "type": response.images[0].faces[0].attributes.gender.type,
@@ -18,7 +25,7 @@
   }
   $( ".inner" ).append( '<p>'+"Age: " + ris.age + '</p>', '<p>'+"Type: " + ris.type + '</p>', '<p>'+"Asian: " + ris.asian + '</p>' ).show( 1000 );
 
-});}
+}});}
 
     var headers = {
       "Content-type": "application/json",
@@ -63,6 +70,7 @@
       $('#logo_up').hide(" fast ")
       $('#upload_button').hide(" fast ")
       $('#photo_button').hide(" fast ")
+      $('#photo_stats').show(" fast ")
       $('#myImg').attr('src', e.target.result).show( 1000 );
     };
 
@@ -107,9 +115,7 @@ function startWebcam() {
   }
 }
 
-function stopWebcam() {
-    webcamStream.stop();
-}
+
 //---------------------
 // TAKE A SNAPSHOT CODE
 //---------------------
@@ -125,9 +131,9 @@ function init() {
 function snapshot() {
    // Draws current image from the video element into the canvas
   ctx.drawImage(video, 0,0, canvas.width, canvas.height);
+  let risultato_cam = $("#myCanvas")[0].toDataURL();
+  ajaxcall(risultato_cam)
+  $('#camera').hide( "fast" );
+  $('#cam_res').show( 1000 );
+
 }
-$( "#snap" ).click(function() {
-let risultato_cam = $("#myCanvas")[0].toDataURL();
-console.log(risultato_cam);
-ajaxcall(risultato_cam)
-})

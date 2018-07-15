@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="src/style/style.css">
     <script src="src/js/overlay.js"></script>
-    <script src="src/js/upload_system.js"></script>
+    <script src="src/js/camera_system.js"></script>
     <script src="src/js/face_detecting.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -87,13 +87,25 @@
         </div>
         <div id="photo_button"class="col-md-5 full_h center">
           <div class="block ulpload_square">
-            <p class="material-icons personal hor_center">add_a_photo</p>
+            <p class="material-icons personal hor_center">photo_camera</p>
             <p class="section1_txt cente text-center">Add photos of your face<br> from your gallery</p>
           </div>
         </div>
         <div id="photo_stats"class="col-md-12 center">
           <div class="block">
             <img id="myImg" src=""/ class="hidden">
+            <div class="inner text-center hidden"></div>
+          </div>
+        </div>
+        <div id="camera" class="col-md-12 hidden center">
+          <div class="block">
+            <video class="hor_center" onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+          </div>
+          <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
+        </div>
+        <div id="cam_res" class="col-md-12 hidden center">
+          <div>
+            <canvas class="hor_center"  id="myCanvas" width="400" height="400"></canvas>
             <div class="inner text-center hidden"></div>
           </div>
         </div>

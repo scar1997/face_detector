@@ -186,3 +186,7 @@ p{
 #photo_button{
   cursor: pointer;
 }
+
+#snap{
+  cursor: pointer;
+}
