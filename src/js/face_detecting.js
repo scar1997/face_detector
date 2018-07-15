@@ -6,26 +6,63 @@
     dataType: "json"
 }).done(function(response){
 	console.log(response);
-  if (response.Errors[0].ErrCode == "5002")  {
+  /*if (response.Errors[0].ErrCode == "5002")  {
     $( ".inner" ).append('<p>'+ "No faces found in the image"+'</p>').show( 1000 )
     console.log("errore");
   }
-  else {
+  else {*/
 
 
   ris ={
   "age": response.images[0].faces[0].attributes.age,
   "type": response.images[0].faces[0].attributes.gender.type,
   "asian": response.images[0].faces[0].attributes.asian,
+  "black": response.images[0].faces[0].attributes.black,
+  "hispanic": response.images[0].faces[0].attributes.hispanic,
+  "white":response.images[0].faces[0].attributes.white,
+  "other":response.images[0].faces[0].attributes.other
   }
   if(ris.type == "M"){
-    ris.type = "Male"
+    ris.type = '<p style="color:blue"  class="material-icons personal text-center">account_circle</p>'
   }else{
-    ris.type = "Female"
+    ris.type = '<p style="color:pink"  class="material-icons personal text-center">account_circle</p>'
   }
-  $( ".inner" ).append( '<p>'+"Age: " + ris.age + '</p>', '<p>'+"Type: " + ris.type + '</p>', '<p>'+"Asian: " + ris.asian + '</p>' ).show( 1000 );
+  $( ".inner" ).append( '<p>'+"Age: " + ris.age + '</p>', '<p>'+ ris.type + '</p>' ).show( 1000 );
 
-}});}
+
+  var chart = new CanvasJS.Chart("chartContainer", {
+    exportEnabled: true,
+    animationEnabled: true,
+    title:{
+    },
+    legend:{
+      cursor: "pointer",
+      itemclick: explodePie
+    },
+    data: [{
+      type: "pie",
+      dataPoints: [
+        { y: ris.asian , name: "Asian"},
+        { y: ris.black, name: "Black" },
+        { y: ris.hispanic, name: "Hispanic" },
+        { y: ris.white, name: "White" },
+        { y: ris.other, name: "Other" }
+      ]
+    }]
+  });
+  chart.render();
+
+
+  function explodePie (e) {
+    if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+    } else {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+    }
+    e.chart.render();
+
+  }
+});}
 
     var headers = {
       "Content-type": "application/json",

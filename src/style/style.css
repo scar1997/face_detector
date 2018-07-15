@@ -30,7 +30,7 @@ p{
 .hor_center{
   position: relative;
   left: 50%;
-   transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .block{
@@ -189,4 +189,19 @@ p{
 
 #snap{
   cursor: pointer;
+}
+
+.canvasjs-chart-toolbar{
+
+}
+
+.canvasjs-chart-credit{
+  display: none;
+}
+
+.canvasjs-chart-canvas{
+   width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
