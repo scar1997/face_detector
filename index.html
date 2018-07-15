@@ -12,17 +12,24 @@
     <script src="src/js/camera_system.js"></script>
     <script src="src/js/face_detecting.js"></script>
     <script src="src/js/canvasjs.min.js"></script>
+    <script src="src/js/loader.js"></script>
+    <link rel="stylesheet" href="src/style/mediaq.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
 <body onload="init();">
 
+<!-- LOADER !-->
+<div class="loader">
+  <img id="on_load" class="logo hor_vert_center" src="src/img/logo.svg" alt="">
+</div>
+
   <!-- HEROBANNER !-->
   <header class="hero_banner">
     <div class="container-fluid black_op">
-        <div class="row full_h">
-            <div class="col-md-6 center full_h">
+        <div class="row full_h2">
+            <div class="col-md-6 center full_h2">
               <div class="block">
                 <img class="logo hor_center" src="src/img/logo.svg" alt="">
                 <p class="hb_txt center">Detect your face</p>
@@ -36,13 +43,13 @@
   <div class="container-fluid spacing">
     <!--<span class="center">How it works</span>!-->
     <div class="row">
-      <div class="col-md-4 center">
+      <div class="col-md-4 center pb_25_smartphone">
         <div class="block">
           <p class="material-icons personal hor_center pb_15">add_photo_alternate</p>
           <p class="section1_txt cente text-center">Add photo of your face<br>from your gallery</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 pb_25_smartphone">
         <div class="block">
           <p class="material-icons personal hor_center pb_15">add_a_photo</p>
           <p class="section1_txt cente text-center">Or take a picture<br>of your face</p>
@@ -71,7 +78,7 @@
   <div class="overlay-content">
     <div class="container-fluid full_h">
       <div class="row full_h">
-        <div id="upload_button" class="col-md-5 full_h center">
+        <div id="upload_button" class="col-xs-12 col-sm-6 col-md-5 full_h center pt_100">
             <div class="upload-btn-wrapper">
               <div class="block ulpload_square">
                 <p class="material-icons personal hor_center">add_photo_alternate</p>
@@ -80,26 +87,26 @@
               <input type="file" name="image" onchange="encodeImagetoBase64(this)">
             </div>
         </div>
-        <div id="logo_up" class="col-md-2 full_h center">
+        <div id="logo_up" class="col-sm-2 full_h center">
           <div class="block">
             <img class="logo hor_center" src="src/img/logo.svg" alt="">
             <p class="center ov_txt text-center">Ready to scan your face?</p>
           </div>
         </div>
-        <div id="photo_button"class="col-md-5 full_h center">
+        <div id="photo_button"class=" col-xs-12 col-sm-6 col-md-5 full_h center">
           <div class="block ulpload_square">
             <p class="material-icons personal hor_center">photo_camera</p>
             <p class="section1_txt cente text-center">Let's take a selfie<br> now</p>
           </div>
         </div>
-        <div id="photo_stats"class="col-md-12 center">
+        <div id="photo_stats"class="col-md-12 center m_top">
           <div class="block">
             <img id="myImg" src=""/ class="hidden">
             <div class="inner text-center hidden"></div>
             <div class="hor_center" id="chartContainer" style="height: 200px; width: 200px;"></div>
           </div>
         </div>
-        <div id="camera" class="col-md-12 hidden center">
+        <div id="camera" class="col-md-12 hidden cente m_top">
           <div class="vert_center">
             <div class="block">
               <video class="hor_center pb_15" onclick="snapshot(this);" width=auto height=300 id="video" controls autoplay></video>
@@ -107,7 +114,7 @@
             <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
           </div>
         </div>
-        <div id="cam_res" class="col-md-12 hidden center">
+        <div id="cam_res" class="col-md-12 hidden center m_top">
           <div class="block vert_center">
             <canvas class="hor_center"  id="myCanvas" width="auto" height="300"></canvas>
             <div class="inner text-center hidden"></div>
