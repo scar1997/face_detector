@@ -100,14 +100,16 @@
           </div>
         </div>
         <div id="camera" class="col-md-12 hidden center">
-          <div class="block">
-            <video class="hor_center" onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+          <div class="vert_center">
+            <div class="block">
+              <video class="hor_center pb_15" onclick="snapshot(this);" width=auto height=300 id="video" controls autoplay></video>
+            </div>
+            <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
           </div>
-          <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
         </div>
         <div id="cam_res" class="col-md-12 hidden center">
-          <div class="block">
-            <canvas class="hor_center"  id="myCanvas" width="400" height="400"></canvas>
+          <div class="block vert_center">
+            <canvas class="hor_center"  id="myCanvas" width="auto" height="300"></canvas>
             <div class="inner text-center hidden"></div>
             <div class="hor_center" id="chartContainer2" style="height: 200px; width: 200px;"></div>
           </div>

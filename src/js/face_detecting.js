@@ -205,7 +205,7 @@ function snapshot() {
   ctx.drawImage(video, 0,0, canvas.width, canvas.height);
   let risultato_cam = $("#myCanvas")[0].toDataURL();
   ajaxcall(risultato_cam)
-  $('#camera').hide( "fast" );
+  $('#camera').hide( 500 );
   $('#cam_res').show( 1000 );
 
 }

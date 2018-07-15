@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#photo_button').click(function() {
-        $(this).hide( 1000 );
-        $('#logo_up').hide( 1000 );
+        $(this).hide( 500 );
+        $('#logo_up').hide( 500 );
         $('#upload_button').hide( 1000 );
         $('#photo_stats').addClass('hidden');
         $('#camera').show( 1000 );
