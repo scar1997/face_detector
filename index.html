@@ -24,7 +24,7 @@
         <div class="row full_h">
             <div class="col-md-6 center full_h">
               <div class="block">
-                <span class="center">logo</span>
+                <img class="logo hor_center" src="src/img/logo.svg" alt="">
                 <p class="hb_txt center">Detect your face</p>
               </div>
             </div>
@@ -38,20 +38,20 @@
     <div class="row">
       <div class="col-md-4 center">
         <div class="block">
-          <p class="material-icons personal hor_center">add_photo_alternate</p>
+          <p class="material-icons personal hor_center pb_15">add_photo_alternate</p>
           <p class="section1_txt cente text-center">Add photo of your face<br>from your gallery</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="block">
-          <p class="material-icons personal hor_center">add_a_photo</p>
+          <p class="material-icons personal hor_center pb_15">add_a_photo</p>
           <p class="section1_txt cente text-center">Or take a picture<br>of your face</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="block">
-          <p class="material-icons personal hor_center">show_chart</p>
-          <p class="section1_txt cente text-center">Discover your estimated<br>Race and age</p>
+          <p class="material-icons personal hor_center pb_15">show_chart</p>
+          <p class="section1_txt cente text-center">And discover your estimated<br>race and age</p>
         </div>
       </div>
     </div>
@@ -82,14 +82,14 @@
         </div>
         <div id="logo_up" class="col-md-2 full_h center">
           <div class="block">
-            <span class="center">logo</span>
-            <p class="center">Upload your face</p>
+            <img class="logo hor_center" src="src/img/logo.svg" alt="">
+            <p class="center ov_txt text-center">Ready to scan your face?</p>
           </div>
         </div>
         <div id="photo_button"class="col-md-5 full_h center">
           <div class="block ulpload_square">
             <p class="material-icons personal hor_center">photo_camera</p>
-            <p class="section1_txt cente text-center">Add photos of your face<br> from your gallery</p>
+            <p class="section1_txt cente text-center">Let's take a selfie<br> now</p>
           </div>
         </div>
         <div id="photo_stats"class="col-md-12 center">
@@ -106,15 +106,21 @@
           <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
         </div>
         <div id="cam_res" class="col-md-12 hidden center">
-          <div>
+          <div class="block">
             <canvas class="hor_center"  id="myCanvas" width="400" height="400"></canvas>
             <div class="inner text-center hidden"></div>
+            <div class="hor_center" id="chartContainer2" style="height: 200px; width: 200px;"></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
+<div class="container-fluid crediti center">
+  <div class="row">
+  	<p class="text-center txt_crediti ">©2018 Face Detector - Designed by: Francesco Scardigno</span>
+  </div>
 </div>
 
 

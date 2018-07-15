@@ -30,6 +30,40 @@
   $( ".inner" ).append( '<p>'+"Age: " + ris.age + '</p>', '<p>'+ ris.type + '</p>' ).show( 1000 );
 
 
+  var chart = new CanvasJS.Chart("chartContainer2", {
+    exportEnabled: true,
+    animationEnabled: true,
+    title:{
+    },
+    legend:{
+      cursor: "pointer",
+      itemclick: explodePie
+    },
+    data: [{
+      type: "pie",
+      showInLegend: true,
+      dataPoints: [
+        { y: ris.asian , name: "Asian"},
+        { y: ris.black, name: "Black" },
+        { y: ris.hispanic, name: "Hispanic" },
+        { y: ris.white, name: "White" },
+        { y: ris.other, name: "Other" }
+      ]
+    }]
+  });
+  chart.render();
+
+
+  function explodePie (e) {
+    if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+    } else {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+    }
+    e.chart.render();
+
+  }
+
   var chart = new CanvasJS.Chart("chartContainer", {
     exportEnabled: true,
     animationEnabled: true,
@@ -41,6 +75,7 @@
     },
     data: [{
       type: "pie",
+      showInLegend: true,
       dataPoints: [
         { y: ris.asian , name: "Asian"},
         { y: ris.black, name: "Black" },

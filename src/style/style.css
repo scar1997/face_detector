@@ -45,6 +45,10 @@ p{
   color: #4D4D4D;
 }
 /*HEROBANNER*/
+.logo{
+  width: 75px;
+  height: 75px;
+}
 .hero_banner{
   background-image: url(../img/hero_banner.jpg);
   background-size: cover;
@@ -60,7 +64,7 @@ p{
 
 .hb_txt{
   color: #FFFFFF;
-  font-size: 30px;
+  font-size: 40px;
 }
 /*HOW IT WORKS*/
 .section1_txt{
@@ -70,7 +74,7 @@ p{
 }
 
 .button {
-  background-color: #4CAF50;
+  background-color: #87D37C;
   color: white;
   padding: 10px 20px 10px 20px;
   text-align: center;
@@ -79,14 +83,14 @@ p{
   font-size: 17px;
   cursor: pointer;
   border-radius: 10px;
-  font-weight: 500;
+  font-weight: 600;
   border: 2px solid #FFFFFF;
 }
 
 .button:hover{
   background-color: white;
-  color: #4CAF50;
-  border: 2px solid #4CAF50;
+  color: #87D37C;
+  border: 2px solid #87D37C;
   transition: 0.5s;
 }
 
@@ -98,7 +102,15 @@ p{
   padding: 50px 0px 0px 0px;
 }
 
+.pb_15{
+  padding-bottom: 15px;
+}
+
 /*OVERLAY*/
+.ov_txt{
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 30px;
+}
 .overlay {
   height: 0px;
   width: 100%;
@@ -118,23 +130,7 @@ p{
   height: 100%;
 }
 
-/* The navigation links inside the overlay
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block; Display block instead of inline
-    transition: 0.3s; Transition effects on hover (color)
-}
-*/
 
-/* When you mouse over the navigation links, change their color
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}*/
-
-/* Position the close button (top right corner) */
 .overlay .closebtn {
     position: absolute;
     top: 20px;
@@ -148,21 +144,12 @@ p{
   color: #ff5757;
   transition: 0.5s;
 }
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap
-@media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-*/
 
 .ulpload_square{
   padding: 50px;
-  border: 2px dashed blue;
+  border: 2px dashed #4D4D4D;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .upload-btn-wrapper {
@@ -183,14 +170,11 @@ p{
   display: none;
 }
 
-#photo_button{
-  cursor: pointer;
-}
-
 #snap{
   cursor: pointer;
 }
 
+/*GRAPHS*/
 .canvasjs-chart-toolbar{
 
 }
@@ -200,8 +184,19 @@ p{
 }
 
 .canvasjs-chart-canvas{
-   width: 100%;
+  width: 100%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*FOOTER*/
+.crediti{
+  height: 25px;
+  background-color: #1c1c1c;
+}
+
+.txt_crediti{
+  color: #FFFFFF;
+  font-size: 10px;
 }
