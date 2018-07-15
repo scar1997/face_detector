@@ -23,11 +23,11 @@
   "other":response.images[0].faces[0].attributes.other
   }
   if(ris.type == "M"){
-    ris.type = '<p style="color:blue"  class="material-icons personal text-center">account_circle</p>'
+    ris.type = '<p style="color:#89C4F4"  class="material-icons personal text-center">account_circle</p>'
   }else{
     ris.type = '<p style="color:pink"  class="material-icons personal text-center">account_circle</p>'
   }
-  $( ".inner" ).append( '<p>'+"Age: " + ris.age + '</p>', '<p>'+ ris.type + '</p>' ).show( 1000 );
+  $( ".inner" ).append( '<p class="pb_15">'+"Estimated age " + ris.age + '</p>', '<p>'+ ris.type + '</p>' ).show( 1000 );
 
 
   var chart = new CanvasJS.Chart("chartContainer2", {
@@ -41,7 +41,7 @@
     },
     data: [{
       type: "pie",
-      showInLegend: true,
+        /*showInLegend: true,*/
       dataPoints: [
         { y: ris.asian , name: "Asian"},
         { y: ris.black, name: "Black" },
@@ -75,7 +75,7 @@
     },
     data: [{
       type: "pie",
-      showInLegend: true,
+      /*showInLegend: true,*/
       dataPoints: [
         { y: ris.asian , name: "Asian"},
         { y: ris.black, name: "Black" },
