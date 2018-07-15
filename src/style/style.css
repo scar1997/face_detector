@@ -164,3 +164,25 @@ p{
   border: 2px dashed blue;
   border-radius: 10px;
 }
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+#photo_button{
+  cursor: pointer;
+}
