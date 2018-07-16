@@ -1,11 +1,10 @@
+/*MEDIA QUERY FILE*/
 
 @media (min-width: 1800px) {
-
 }
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1200px) {
-
 }
 
 /* Portrait tablets and small desktops */
@@ -13,8 +12,6 @@
 	.pb_25_smartphone{
 		padding-bottom: 25px;
 	}
-
-
 }
 
 /* Landscape phones and portrait tablets */

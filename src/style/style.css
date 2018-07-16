@@ -39,13 +39,6 @@ p{
   transform: translateY(-50%);
 }
 
-.hor_vert_center{
-  position:relative;
-  top:50%;
-  left:50%;
-  transform: translate(-50% -50%);
-}
-
 .block{
   display: block;
 }
@@ -213,6 +206,10 @@ p{
 
 #snap:hover{
   color: rgba(0, 0, 0, 0.5);
+}
+
+#myCanvas{
+  border-radius: 10px;
 }
 
 /*GRAPHS*/

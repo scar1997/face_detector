@@ -1,3 +1,4 @@
+/*ON CLICK PHOTO BUTTON*/
 $(document).ready(function() {
     $('#photo_button').click(function() {
         $(this).hide( 500 );

@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Face Detector</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/style/style.css">
-    <script src="src/js/overlay.js"></script>
-    <script src="src/js/camera_system.js"></script>
-    <script src="src/js/face_detecting.js"></script>
-    <script src="src/js/canvasjs.min.js"></script>
-    <script src="src/js/loader.js"></script>
-    <link rel="stylesheet" href="src/style/mediaq.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Face Detector</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="src/style/style.css">
+  <link rel="stylesheet" href="src/style/mediaq.css">
+  <script src="src/js/overlay.js"></script>
+  <script src="src/js/camera_system.js"></script>
+  <script src="src/js/face_detecting.js"></script>
+  <script src="src/js/canvasjs.min.js"></script>
+  <script src="src/js/loader.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body onload="init();">
 
-<!-- LOADER !-->
-
-<div class="loader">
-  <img id="on_load" class="logo hor_vert_center" src="src/img/logo.svg" alt="">
-</div>
+  <!-- LOADER !-->
+  <div class="loader center">
+    <img id="on_load" class="logo" src="src/img/logo.svg" alt="">
+  </div>
 
   <!-- HEROBANNER !-->
   <header class="hero_banner">
     <div class="container-fluid black_op">
-        <div class="row full_h2">
-            <div class="col-md-6 center full_h2">
-              <div class="block">
-                <img class="logo hor_center" src="src/img/logo.svg" alt="">
-                <p class="hb_txt center">Detect your face</p>
-              </div>
-            </div>
+      <div class="row full_h2">
+        <div class="col-md-6 center full_h2">
+          <div class="block">
+            <img class="logo hor_center" src="src/img/logo.svg" alt="">
+            <p class="hb_txt center">Detect your face</p>
+          </div>
         </div>
+      </div>
     </div>
   </header>
 
   <!-- HOW  IT WORKS !-->
   <div class="container-fluid spacing">
-    <!--<span class="center">How it works</span>!-->
     <div class="row">
       <div class="col-md-4 center pb_25_smartphone">
         <div class="block">
           <p class="material-icons personal hor_center pb_15">add_photo_alternate</p>
-          <p class="section1_txt cente text-center">Add photo of your face<br>from your gallery</p>
+          <p class="section1_txt cente text-center">Add photo of your face
+            <br>from your gallery</p>
         </div>
       </div>
       <div class="col-md-4 pb_25_smartphone">
         <div class="block">
           <p class="material-icons personal hor_center pb_15">add_a_photo</p>
-          <p class="section1_txt cente text-center">Or take a picture<br>of your face</p>
+          <p class="section1_txt cente text-center">Or take a picture
+            <br>of your face</p>
         </div>
       </div>
       <div class="col-md-4">
         <div class="block">
           <p class="material-icons personal hor_center pb_15">show_chart</p>
-          <p class="section1_txt cente text-center">And discover your estimated<br>race and age</p>
+          <p class="section1_txt cente text-center">And discover your estimated
+            <br>race and age</p>
         </div>
       </div>
     </div>
@@ -72,71 +75,73 @@
   </div>
 
   <!-- OVERLAY ON CLICK BUTTON !-->
-<div id="overlay_id" class="overlay">
-  <!-- Button to close the overlay navigation -->
-  <a href="javascript:void(0)" class="closebtn" onclick="close_overlay()">&times;</a>
-  <!-- Overlay content -->
-  <div class="overlay-content">
-    <div class="container-fluid full_h">
-      <div class="row full_h">
-        <div id="upload_button" class="col-xs-12 col-sm-6 col-md-5 full_h center pt_100">
+  <div id="overlay_id" class="overlay">
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="close_overlay()">&times;</a>
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <div class="container-fluid full_h">
+        <div class="row full_h">
+          <div id="upload_button" class="col-xs-12 col-sm-6 col-md-5 full_h center pt_100">
             <div class="upload-btn-wrapper">
               <div class="block ulpload_square">
                 <p class="material-icons personal hor_center">add_photo_alternate</p>
-                <p class="section1_txt cente text-center">Drag your photo <br> or upload it</p>
+                <p class="section1_txt cente text-center">Drag your photo
+                  <br> or upload it</p>
               </div>
               <input type="file" name="image" onchange="encodeImagetoBase64(this)">
             </div>
-        </div>
-        <div id="logo_up" class="col-sm-2 full_h center">
-          <div class="block">
-            <img class="logo hor_center" src="src/img/logo.svg" alt="">
-            <p class="center ov_txt text-center">Ready to scan your face?</p>
           </div>
-        </div>
-        <div id="photo_button"class=" col-xs-12 col-sm-6 col-md-5 full_h center">
-          <div class="block ulpload_square">
-            <p class="material-icons personal hor_center">photo_camera</p>
-            <p class="section1_txt cente text-center">Let's take a selfie<br> now</p>
-          </div>
-        </div>
-        <div id="photo_stats"class="col-md-12 center m_top">
-          <div class="block">
-            <img id="myImg" src=""/ class="hidden">
-            <div class="inner text-center hidden"></div>
-            <div class="hor_center" id="chartContainer" style="height: 200px; width: 200px;"></div>
-          </div>
-        </div>
-        <div id="camera" class="col-md-12 hidden cente m_top">
-          <div class="vert_center">
+          <div id="logo_up" class="col-sm-2 full_h center">
             <div class="block">
-              <video class="hor_center pb_15" onclick="snapshot(this);" width=auto height=300 id="video" controls autoplay></video>
+              <img class="logo hor_center" src="src/img/logo.svg" alt="">
+              <p class="center ov_txt text-center">Ready to scan your face?</p>
             </div>
-            <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
           </div>
-        </div>
-        <div id="cam_res" class="col-md-12 hidden center m_top">
-          <div class="block vert_center">
-            <canvas class="hor_center"  id="myCanvas" width="auto" height="300"></canvas>
-            <div class="inner text-center hidden"></div>
-            <div class="hor_center" id="chartContainer2" style="height: 200px; width: 200px;"></div>
+          <div id="photo_button" class=" col-xs-12 col-sm-6 col-md-5 full_h center">
+            <div class="block ulpload_square">
+              <p class="material-icons personal hor_center">photo_camera</p>
+              <p class="section1_txt cente text-center">Let's take a selfie
+                <br> now</p>
+            </div>
+          </div>
+          <div id="photo_stats" class="col-md-12 center m_top">
+            <div class="block">
+              <img id="myImg" src="" / class="hidden">
+              <div class="inner text-center hidden"></div>
+              <div class="hor_center" id="chartContainer" style="height: 200px; width: 200px;"></div>
+            </div>
+          </div>
+          <div id="camera" class="col-md-12 hidden cente m_top">
+            <div class="vert_center">
+              <div class="block">
+                <video class="hor_center pb_15 webcam" onclick="snapshot(this);" width=auto height=300 id="video" controls autoplay></video>
+              </div>
+              <p id="snap" onclick="snapshot();" class="material-icons personal hor_center">photo_camera</p>
+            </div>
+          </div>
+          <div id="cam_res" class="col-md-12 hidden center m_top">
+            <div class="block vert_center">
+              <canvas class="hor_center" id="myCanvas" width="auto" height="300"></canvas>
+              <div class="inner text-center hidden"></div>
+              <div class="hor_center" id="chartContainer2" style="height: 200px; width: 200px;"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container-fluid crediti center">
-  <div class="row">
-  	<p class="text-center txt_crediti ">©2018 Face Detector - Designed by: Francesco Scardigno</span>
+<!-- FOOTER !-->
+  <div class="container-fluid crediti center">
+    <div class="row">
+      <p class="text-center txt_crediti ">©2018 Face Detector - Designed by: Francesco Scardigno</span>
+    </div>
   </div>
-</div>
 
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
 </body>
 </html>
