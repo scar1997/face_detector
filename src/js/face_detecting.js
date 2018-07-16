@@ -188,5 +188,4 @@ function snapshot() {
   ajaxcall(risultato_cam)
   $('#camera').hide(500);//Animation
   $('#cam_res').show(1000);
-
 }

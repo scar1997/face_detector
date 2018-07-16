@@ -13,5 +13,4 @@ function close_overlay() {
     $('#logo_up').show( 1000 );
     $('#upload_button').show( 1000 );
     setTimeout(location.reload.bind(location), 500);
-
 }
